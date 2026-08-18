@@ -1,0 +1,180 @@
+02:42:07 PM:INFO [logger_base.py:17] Mensaje a nivel info
+02:42:07 PM:WARNING [logger_base.py:18] Mensaje a nivel warning
+02:42:07 PM:ERROR [logger_base.py:19] Mensaje a nivel error
+02:42:07 PM:CRITICAL [logger_base.py:20] Mensaje a nivel critical
+02:46:16 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+02:46:16 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+02:46:17 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+02:46:17 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+02:46:17 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+02:46:17 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+02:46:17 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+02:46:17 PM:ERROR [conexion.py:64] Ocurrió una excepción, se hace rollback: 'Usuario' object has no attribute 'id_persona' <class 'AttributeError'>
+02:46:17 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:03:39 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:03:39 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:03:39 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:03:39 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:03:39 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:03:39 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:03:39 PM:INFO [usuario_dao.py:48] Usuario a eliminar: Usuario: 3 None None
+03:03:39 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:03:39 PM:ERROR [conexion.py:64] Ocurrió una excepción, se hace rollback: 'Usuario' object has no attribute 'id_persona' <class 'AttributeError'>
+03:03:39 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:11:12 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:11:12 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:11:12 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:11:12 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:11:12 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:11:57 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:11:57 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:11:57 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:11:57 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:11:57 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:12:13 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:12:13 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:12:13 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:12:13 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:12:13 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:12:49 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:12:49 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:12:49 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:12:49 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:12:49 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:13:01 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:13:01 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:13:01 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:13:01 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:13:01 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:14:06 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:14:06 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:14:06 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:14:06 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:14:06 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:17:29 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:17:29 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:17:29 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:17:29 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:17:29 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:18:04 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:18:04 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:18:04 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:18:04 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:18:04 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:18:13 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:18:13 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:18:13 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:18:13 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:18:13 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:20:24 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:20:24 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:20:24 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:20:24 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:20:24 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:21:04 PM:INFO [conexion.py:55] Inicio del método con with (__enter__)
+03:21:04 PM:INFO [conexion.py:24] Pool de conexiones creado con éxito.
+03:21:04 PM:INFO [conexion.py:61] Fin del método con with (__exit__)
+03:21:04 PM:INFO [conexion.py:69] Transacción exitosa, se hace commit
+03:21:04 PM:INFO [conexion.py:38] Conexión devuelta al pool.
+03:26:29 PM:INFO [logger_base.py:17] Mensaje a nivel info
+03:26:29 PM:WARNING [logger_base.py:18] Mensaje a nivel warning
+03:26:29 PM:ERROR [logger_base.py:19] Mensaje a nivel error
+03:26:29 PM:CRITICAL [logger_base.py:20] Mensaje a nivel critical
+03:26:41 PM:INFO [conexion.py:53] Inicio del método con with (__enter__)
+03:26:41 PM:INFO [conexion.py:22] Pool de conexiones creado con éxito.
+03:26:41 PM:INFO [conexion.py:59] Fin del método con with (__exit__)
+03:26:41 PM:INFO [conexion.py:67] Transacción exitosa, se hace commit
+03:26:41 PM:INFO [conexion.py:36] Conexión devuelta al pool.
+03:27:47 PM:INFO [conexion.py:53] Inicio del método con with (__enter__)
+03:27:47 PM:INFO [conexion.py:22] Pool de conexiones creado con éxito.
+03:27:47 PM:INFO [conexion.py:59] Fin del método con with (__exit__)
+03:27:47 PM:INFO [conexion.py:67] Transacción exitosa, se hace commit
+03:27:47 PM:INFO [conexion.py:36] Conexión devuelta al pool.
+03:43:26 PM:INFO [logger_base.py:17] Mensaje a nivel info
+03:43:26 PM:WARNING [logger_base.py:18] Mensaje a nivel warning
+03:43:26 PM:ERROR [logger_base.py:19] Mensaje a nivel error
+03:43:26 PM:CRITICAL [logger_base.py:20] Mensaje a nivel critical
+03:44:05 PM:INFO [logger_base.py:17] Mensaje a nivel info
+03:44:05 PM:WARNING [logger_base.py:18] Mensaje a nivel warning
+03:44:05 PM:ERROR [logger_base.py:19] Mensaje a nivel error
+03:44:05 PM:CRITICAL [logger_base.py:20] Mensaje a nivel critical
+03:44:49 PM:INFO [logger_base.py:17] Mensaje a nivel info
+03:44:49 PM:WARNING [logger_base.py:18] Mensaje a nivel warning
+03:44:49 PM:ERROR [logger_base.py:19] Mensaje a nivel error
+03:44:49 PM:CRITICAL [logger_base.py:20] Mensaje a nivel critical
+04:00:45 PM:INFO [conexion.py:50] Inicio del método con with (__enter__)
+04:00:45 PM:INFO [conexion.py:22] Pool de conexiones creado con éxito.
+04:00:52 PM:INFO [conexion.py:50] Inicio del método con with (__enter__)
+04:00:52 PM:INFO [conexion.py:22] Pool de conexiones creado con éxito.
+04:01:25 PM:INFO [conexion.py:50] Inicio del método con with (__enter__)
+04:01:25 PM:INFO [conexion.py:22] Pool de conexiones creado con éxito.
+04:08:04 PM:INFO [conexion.py:50] Inicio del método con with (__enter__)
+04:08:04 PM:INFO [conexion.py:22] Pool de conexiones creado con éxito.
+04:27:26 PM:INFO [conexion.py:43] Inicio del método con with (__enter__)
+04:29:35 PM:INFO [conexion.py:43] Inicio del método con with (__enter__)
+04:31:32 PM:INFO [conexion.py:43] Inicio del método con with (__enter__)
+05:04:51 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:04:51 PM:ERROR [conexion.py:32] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:05:32 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:05:32 PM:ERROR [conexion.py:32] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:09:50 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:09:50 PM:ERROR [conexion.py:32] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:10:54 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:10:55 PM:ERROR [conexion.py:32] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:13:51 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:13:51 PM:ERROR [conexion.py:32] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:14:20 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:14:21 PM:ERROR [conexion.py:32] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:19:43 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:19:43 PM:ERROR [conexion.py:34] Error al inicializar el pool en PostgreSQL: invalid integer value "b'5432'" for connection option "port"
+
+05:22:51 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:22:51 PM:ERROR [conexion.py:33] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:26:02 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+05:26:02 PM:ERROR [conexion.py:33] Error al inicializar el pool en PostgreSQL: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+05:43:43 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:43:43 PM:INFO [conexion.py:21] Pool de conexiones creado con �xito.
+05:43:43 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:43:43 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:43:43 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:44:36 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:44:36 PM:INFO [usuario_dao.py:29] Usuario preparado para insertar: Usuario ID: None, Username: jperez, Password: 123
+05:44:36 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:44:36 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:44:36 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:45:08 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:45:08 PM:INFO [usuario_dao.py:29] Usuario preparado para insertar: Usuario ID: None, Username: kgomez, Password: 456
+05:45:08 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:45:08 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:45:08 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:45:10 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:45:10 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:45:10 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:45:10 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:45:44 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:45:44 PM:INFO [usuario_dao.py:37] Usuario preparado para actualizar: Usuario ID: 1, Username: juan perez, Password: 321
+05:45:44 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:45:44 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:45:44 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:45:48 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:45:48 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:45:48 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:45:48 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:45:57 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:45:57 PM:INFO [usuario_dao.py:45] Usuario preparado para eliminar: Usuario ID: 1, Username: None, Password: None
+05:45:57 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:45:57 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:45:57 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:46:00 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:46:00 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:46:00 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:46:00 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:46:22 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:46:22 PM:INFO [usuario_dao.py:29] Usuario preparado para insertar: Usuario ID: None, Username: jperez, Password: 123
+05:46:22 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:46:22 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:46:22 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
+05:46:26 PM:INFO [cursor_del_pool.py:12] Inicio del m�todo con with (__enter__)
+05:46:26 PM:INFO [cursor_del_pool.py:18] Fin del m�todo con with (__exit__)
+05:46:26 PM:INFO [cursor_del_pool.py:26] Transacci�n exitosa, se hace commit
+05:46:26 PM:INFO [conexion.py:32] Conexi�n devuelta al pool de manera conceptual.
