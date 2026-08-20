@@ -178,3 +178,8 @@
 05:46:26 PM:INFO [cursor_del_pool.py:18] Fin del método con with (__exit__)
 05:46:26 PM:INFO [cursor_del_pool.py:26] Transacción exitosa, se hace commit
 05:46:26 PM:INFO [conexion.py:32] Conexión devuelta al pool de manera conceptual.
+08:52:10 PM:INFO [cursor_del_pool.py:12] Inicio del método con with (__enter__)
+08:52:10 PM:INFO [conexion.py:21] Pool de conexiones creado con éxito.
+08:52:10 PM:INFO [cursor_del_pool.py:18] Fin del método con with (__exit__)
+08:52:10 PM:INFO [cursor_del_pool.py:26] Transacción exitosa, se hace commit
+08:52:10 PM:INFO [conexion.py:32] Conexión devuelta al pool de manera conceptual.
