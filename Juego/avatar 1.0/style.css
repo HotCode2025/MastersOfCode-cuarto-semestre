@@ -1,0 +1,113 @@
+/* Configuración General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Fondo degradado místico */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Tipografía de Avatar aplicada al título */
+.titulo-avatar {
+    font-family: 'Caesar Dressing', serif;
+    font-size: 80px;
+    margin-bottom: 0;
+    color: #f4c430; /* Dorado brillante */
+    text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+    letter-spacing: 4px;
+}
+
+h4 {
+    font-size: 20px;
+    letter-spacing: 6px;
+    margin-top: 5px;
+    color: #e0e0e0;
+}
+
+/* Botones Modernos */
+button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ff4757;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+}
+
+button:disabled {
+    background-color: #747d8c;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Sección de Tarjetas de Personajes */
+.tarjetas-personajes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.2s;
+    border: 3px solid rgba(255,255,255,0.2);
+    text-shadow: 1px 1px 2px #000;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+}
+
+/* Colores temáticos por personaje */
+.zuko { background: linear-gradient(135deg, #870000, #190000); }    /* Fuego */
+.katara { background: linear-gradient(135deg, #2193b0, #6dd5ed); }  /* Agua */
+.aang { background: linear-gradient(135deg, #e65c00, #f9d423); }    /* Aire */
+.toph { background: linear-gradient(135deg, #11998e, #38ef7d); }    /* Tierra */
+
+/* Marcador de Vidas */
+.marcador {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Historial de Mensajes */
+#mensajes p {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 5px 0;
+    animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

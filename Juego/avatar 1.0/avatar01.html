@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar: La Leyenda de Aang</title>
+    <!-- Conectamos la fuente estilo romana/antigua de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- ENLACE CRÍTICO: Asegúrate de que tu archivo CSS se llame exactamente style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="titulo-avatar">AVATAR</h1>
+    <h4>LA LEYENDA DE AANG</h4>
+
+    <section id="reglas-del-juego">
+        <h2>Reglas del Juego</h2>
+        <ol>
+            <li><strong>Selección de Personajes:</strong> Elige a Zuko, Katara, Aang o Toph.</li>
+            <li><strong>Combate:</strong> Puño ✊ vence a Barrida. Patada 🦶 vence a Puño. Barrida 👣 vence a Patada.</li>
+        </ol>
+    </section>
+
+    <button id="boton-reglas">Ver Reglas</button>
+    <button id="boton-jugar">Jugar</button>
+
+    <section id="seleccionar-personaje">
+        <h2>Elige tu Personaje</h2>
+        <div class="tarjetas-personajes">
+            <label class="tarjeta zuko">
+                <input type="radio" name="personaje" id="zuko"> Zuko 🔥
+            </label>
+            <label class="tarjeta katara">
+                <input type="radio" name="personaje" id="katara"> Katara 🌊
+            </label>
+            <label class="tarjeta aang">
+                <input type="radio" name="personaje" id="aang"> Aang 🌪️
+            </label>
+            <label class="tarjeta toph">
+                <input type="radio" name="personaje" id="toph"> Toph 🪨
+            </label>
+        </div>
+        <button id="boton-personaje">Seleccionar</button>
+    </section>
+
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque</h2>
+        
+        <div class="marcador">
+            <p>Tu personaje (<span id="personaje-jugador">-</span>): <strong id="vidas-jugador">3</strong> vidas</p>
+            <p>Enemigo (<span id="personaje-enemigo">-</span>): <strong id="vidas-enemigo">3</strong> vidas</p>
+        </div>
+
+        <div class="contenedor-botones">
+            <button id="boton-punio" class="btn-ataque">Punio ✊</button>
+            <button id="boton-patada" class="btn-ataque">Patada 🦶</button>
+            <button id="boton-barrida" class="btn-ataque">Barrida 👣</button>
+        </div>
+    </section>
+
+    <section id="mensajes">
+        <!-- Aquí se mostrarán los resultados de los turnos -->
+    </section>
+
+    <section id="reiniciar">
+        <button id="boton-reiniciar">Reiniciar Juego</button>
+    </section>
+
+    <!-- Asegúrate de que tu archivo JS se llame exactamente index.js o cambia este nombre -->
+    <script src="index.js"></script>
+</body>
+</html>
