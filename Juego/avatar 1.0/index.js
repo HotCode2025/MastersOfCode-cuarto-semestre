@@ -11,6 +11,7 @@ function iniciarJuego() {
    
     document.getElementById('boton-personaje').addEventListener('click', seleccionarPersonajeJugador)
     document.getElementById('boton-reglas').addEventListener('click', mostrarReglas)
+    document.getElementById('boton-jugar').addEventListener('click', ocultarReglas) 
     document.getElementById('boton-reiniciar').addEventListener('click', reiniciarJuego)
 
     document.getElementById('boton-punio').addEventListener('click', () => registrarAtaque('Punio'))
@@ -23,7 +24,12 @@ function mostrarReglas() {
     document.getElementById('boton-jugar').style.display = 'block'
     document.getElementById('boton-reglas').style.display = 'none'
     document.getElementById('seleccionar-personaje').style.display = 'none'
-    document.getElementById('boton-jugar').addEventListener('click', seleccionarPersonajeJugador)
+}
+function ocultarReglas() {
+    document.getElementById("reglas-del-juego").style.display = "none"
+    document.getElementById('boton-jugar').style.display = 'none'
+    document.getElementById('boton-reglas').style.display = 'block'
+    document.getElementById('seleccionar-personaje').style.display = 'block'
 }
 
 function seleccionarPersonajeJugador() {
