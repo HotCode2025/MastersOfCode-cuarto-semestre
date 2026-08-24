@@ -1,0 +1,75 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>27</y><w>693</w><h>486</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>126</w><h>27</h></coordinates><panel_attributes>laboratorio_usuarios</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>18</x><y>54</y><w>189</w><h>207</h></coordinates><panel_attributes>Conexion
+-
+_-DATABASE: String_
+_-USERNAME: String_
+_-PASSWORD: String_
+_-DB_PORT: String_
+_-HOST: String_
+_-MIN_CON: int_
+_-MAX_CON: int_
+_-pool: Pool_
+--
+_+obtenerPool(cls): Pool_
+_+obtenerConexion(cls): Connection_
+_+liberarConexion(cls, conexion)_
+_+cerrarConexiones(cls)_
+--
+Responsabilidades:</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>54</y><w>180</w><h>162</h></coordinates><panel_attributes>Usuario
+--
+-id_usuario: int
+-username: String
+-password: String
+...
+--
++str(): String
++metodo Get/Set de cada atributo
+--
+Responsabilidades:
+Crear objetos de entidad Usuario</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>477</x><y>54</y><w>189</w><h>162</h></coordinates><panel_attributes>MenuAppUsuario
+--
+Responsabilidades:
+- Contiene un menú con 5 opciones:
+
+1) Listar usuarios
+2)Agregar usuario
+3)Actualizar usuario
+4)Eliminar usuario
+5)Salir</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>18</x><y>297</y><w>189</w><h>207</h></coordinates><panel_attributes>CursorDelPool
+--
+-conn: String
+-cursor: String
+--
++init(self)
++enter(self)
++exit(self)
+--
+Responsabilidades:
+Adminstrar el objeto conexion y 
+cursor obtenidos a partir del pool 
+de conexiones.Los métodos enter 
+y exit son la implementación del 
+uso de 'with' para trabajar con el 
+cursor
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>279</y><w>180</w><h>207</h></coordinates><panel_attributes>UsuarioDao
+--
+-SELECCIONAR: String
+-INSERTAR: String
+-ACTUALIZAR: String
+-ELIMINAR: String
+--
++seleccionar(cls): List
++insertar(cls, usuario)
++actualizar(cls, usuario)
++eliminar(cls, usuario)
+--
+Responsabilidades:
+Realizar las operaciones CRUD 
+(Create-Read-Update-Detele) 
+sobre la entidad Usuario 
+(tabla usuario)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>477</x><y>279</y><w>189</w><h>162</h></coordinates><panel_attributes>logger_base
+--
++logger:logging
+--
+Responsabilidades:
+-Configuración de logging para 
+toda la aplicación</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>108</x><y>252</y><w>27</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>198</x><y>369</y><w>72</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>207</y><w>27</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>423</x><y>108</y><w>72</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element></diagram>
