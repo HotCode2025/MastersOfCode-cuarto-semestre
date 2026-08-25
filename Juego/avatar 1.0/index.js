@@ -110,7 +110,6 @@ function revisarVidas() {
     }
 }
 
-// CORRECCIÓN AQUÍ: Usamos += para acumular todas las jugadas sin borrar las anteriores
 function crearMensaje(resultado) {
     let sectionMensaje = document.getElementById('mensajes')
     sectionMensaje.innerHTML += `<p>Tu personaje atacó con <strong>${ataqueJugador}</strong>, el enemigo atacó con <strong>${ataqueEnemigo}</strong>. Resultado: <strong>${resultado}</strong></p>`
