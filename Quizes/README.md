@@ -37,6 +37,33 @@ let botonLanzarAtaque = document.getElementById('lanzar-ataque')
    botonLanzarAtaque.addEventListener('click', enviarAlerta())
 ```
 
+## 27/08/2026
+* Respuestas
+
+1. Tienes el siguiente código HTML: 
+```
+<button id="boton-punio">Punio</button> 
+
+<button id="boton-patada">Patada</button> 
+
+<button id="boton-barrida">Barrida</button>
+```
+¿Cómo cambiamos el color del texto únicamente del botón de Punio?
+
+* Respuesta correcta a. #boton-punio { color: red;}
+
+2. Tenemos un elemento <p> con un width de 100px, un height de 100px y un padding de 20px. ¿Qué propiedad y valor de CSS podemos añadirle a nuestro <p> para que el padding NO modifique el tamaño de 100px de ancho y 100px de alto de este elemento?
+
+* Respuesta correcta d. box-sizing: border-box;
+
+3. Quieres sobrescribir todo el contenido HTML de un elemento sectionMensajes por un nuevo texto almacenado en la variable notificación. ¿Cómo lo harías?
+
+* Respuesta correcta b. sectionMensajes.innerHTML = notificacion
+
+4. ¿Qué propiedad y valor de CSS podemos utilizar para esconder secciones de HTML?
+
+* Respuesta correcta d. display: none;
+
 ## Autores
 
 - [@FranciscoKnap](https://github.com/franciscoknap3)
