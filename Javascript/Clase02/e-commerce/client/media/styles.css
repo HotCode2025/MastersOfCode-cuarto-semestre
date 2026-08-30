@@ -52,14 +52,14 @@
 
 .cart-btn {
     position: fixed;
-    bottom: 30px; 
+    bottom: 30px; /* Se ancla abajo, mejor que top: 90vh */
     right: 30px;
     background-color: rgb(25, 25, 25);
     color: white;
     border-radius: 50%;
     height: 60px;
     width: 60px;
-    display: flex; 
+    display: flex; /* Flexbox para centrar el emoji */
     justify-content: center;
     align-items: center;
     font-size: 24px;
