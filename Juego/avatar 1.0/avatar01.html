@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
-
 </head>
 <body>
 
@@ -42,6 +40,11 @@
             <label class="tarjeta toph">
                 <input type="radio" name="personaje" id="toph"> Toph 🪨
             </label>
+            <label class="tarjeta sokka">
+                <input type="radio" name="personaje" id="sokka"> Sokka 🪃
+            <label class="tarjeta azula">
+                <input type="radio" name="personaje" id="azula"> Azula ⚡
+            </label>
         </div>
         <button id="boton-personaje">Seleccionar</button>
     </section>
@@ -50,8 +53,14 @@
         <h2>Elige tu ataque</h2>
         
         <div class="marcador">
-            <p>Tu personaje (<span id="personaje-jugador">-</span>): <strong id="vidas-jugador">3</strong> vidas</p>
-            <p>Enemigo (<span id="personaje-enemigo">-</span>): <strong id="vidas-enemigo">3</strong> vidas</p>
+            <div class="contenedor-vida">
+                <p>Tu personaje (<span id="personaje-jugador">-</span>)</p>
+                <div class="barra-externa"><div id="barra-vida-jugador" class="barra-interna"></div></div>
+            </div>
+            <div class="contenedor-vida">
+                <p>Enemigo (<span id="personaje-enemigo">-</span>)</p>
+                <div class="barra-externa"><div id="barra-vida-enemigo" class="barra-interna"></div></div>
+            </div>
         </div>
 
         <div class="contenedor-botones">

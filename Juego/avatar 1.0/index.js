@@ -1,7 +1,27 @@
 let ataqueJugador
 let ataqueEnemigo
-let vidasJugador = 3 
-let vidasEnemigo = 3
+let personajeJugadorObjeto 
+let personajeEnemigoObjeto 
+
+class Personaje {
+    constructor(nombre, icono, elemento, color) {
+        this.nombre = nombre
+        this.icono = icono
+        this.elemento = elemento 
+        this.color = color       
+        this.vidas = 3
+        this.vidasMaximas = 3
+    }
+}
+
+let zuko = new Personaje("Zuko", "🔥", "Fuego", "#ff4757")
+let katara = new Personaje("Katara", "🌊", "Agua", "#2e86de")
+let aang = new Personaje("Aang", "🌪️", "Aire", "#f1c40f")
+let toph = new Personaje("Toph", "🪨", "Tierra", "#2ecc71")
+let sokka = new Personaje("Sokka", "🪃", "No maestro", "#34495e")
+let azula = new Personaje("Azula", "⚡", "Fuego", "#8e44ad")
+
+let personajesDisponibles = [zuko, katara, aang, toph, sokka, azula]
 
 function iniciarJuego() {
     document.getElementById('seleccionar-ataque').style.display = 'none'
@@ -25,6 +45,7 @@ function mostrarReglas() {
     document.getElementById('boton-reglas').style.display = 'none'
     document.getElementById('seleccionar-personaje').style.display = 'none'
 }
+
 function ocultarReglas() {
     document.getElementById("reglas-del-juego").style.display = "none"
     document.getElementById('boton-jugar').style.display = 'none'
@@ -35,12 +56,16 @@ function ocultarReglas() {
 function seleccionarPersonajeJugador() {
     let sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje')
     let spanPersonajeJugador = document.getElementById('personaje-jugador')
+    let barraJugador = document.getElementById('barra-vida-jugador')
+    barraJugador.style.width = "100%"
     
     let personajeSeleccionado = document.querySelector('input[name="personaje"]:checked')
 
     if (personajeSeleccionado) {
-        let nombre = personajeSeleccionado.id
-        spanPersonajeJugador.innerHTML = nombre.charAt(0).toUpperCase() + nombre.slice(1)
+        let idSeleccionado = personajeSeleccionado.id 
+        personajeJugadorObjeto = personajesDisponibles.find(personaje => personaje.nombre.toLowerCase() === idSeleccionado)
+        
+        spanPersonajeJugador.innerHTML = personajeJugadorObjeto.nombre + " " + personajeJugadorObjeto.icono
     } else {
         let mensajeError = document.createElement("p")
         mensajeError.innerHTML = '⚠️ Por favor, selecciona un personaje'
@@ -61,9 +86,12 @@ function seleccionarPersonajeJugador() {
 }
 
 function seleccionarPersonajeEnemigo() { 
-    let personajes = ['Zuko', 'Katara', 'Aang', 'Toph']
-    let personajeAleatorio = personajes[aleatorio(0, 3)]
-    document.getElementById('personaje-enemigo').innerHTML = personajeAleatorio
+    let indiceAleatorio = aleatorio(0, personajesDisponibles.length - 1)
+    personajeEnemigoObjeto = personajesDisponibles[indiceAleatorio]
+    let barraEnemigo = document.getElementById('barra-vida-enemigo')
+    barraEnemigo.style.width = "100%"
+    
+    document.getElementById('personaje-enemigo').innerHTML = personajeEnemigoObjeto.nombre + " " + personajeEnemigoObjeto.icono
 }
 
 function registrarAtaque(ataque) {
@@ -78,8 +106,6 @@ function ataqueAleatorioEnemigo() {
 }
 
 function combate() {
-    let spanVidasJugador = document.getElementById('vidas-jugador')
-    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     let resultado = ""
 
     if (ataqueEnemigo === ataqueJugador) {
@@ -90,12 +116,14 @@ function combate() {
         (ataqueJugador === 'Barrida' && ataqueEnemigo === 'Patada')
     ) {
         resultado = "GANASTE 🎉"
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
+        personajeEnemigoObjeto.vidas--
+        let barraEnemigo = document.getElementById('barra-vida-enemigo')
+        barraEnemigo.style.width = (personajeEnemigoObjeto.vidas * 33.33) + "%"
     } else {
         resultado = "PERDISTE 💥"
-        vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador
+        personajeJugadorObjeto.vidas--
+        let barraJugador = document.getElementById('barra-vida-jugador')
+        barraJugador.style.width = (personajeJugadorObjeto.vidas * 33.33) + "%"
     }
 
     crearMensaje(resultado)
@@ -103,9 +131,9 @@ function combate() {
 }
 
 function revisarVidas() {
-    if (vidasEnemigo === 0) {
+    if (personajeEnemigoObjeto.vidas === 0) {
         crearMensajeFinal("🏆 ¡Felicidades! ¡GANASTE EL JUEGO!")
-    } else if (vidasJugador === 0) {
+    } else if (personajeJugadorObjeto.vidas === 0) {
         crearMensajeFinal("💀 ¡Fin del juego! El enemigo te ha derrotado.")
     }
 }
@@ -118,7 +146,6 @@ function crearMensaje(resultado) {
 function crearMensajeFinal(resultadoFinal) {
     document.getElementById('reiniciar').style.display = "block"
     
-    // El mensaje final lo añadimos arriba del historial de jugadas
     let sectionMensaje = document.getElementById('mensajes')
     sectionMensaje.innerHTML = `<h2>${resultadoFinal}</h2>` + sectionMensaje.innerHTML
     
