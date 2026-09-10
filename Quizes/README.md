@@ -82,6 +82,73 @@ let botonLanzarAtaque = document.getElementById('lanzar-ataque')
 
 * Respuesta correcta ✅ e. Todas las respuestas son Correctas
 
+
+## 09/09/2026
+* Respuestas
+
+1. Tarea de investigación, deben buscar mas información de lo que es un EvenLoop con Node.js y enviarmela, la investigación puede ser a través de ChatGPT o de cualquier lugar pero esta información debe ser veraz y sertera.
+
+* Respuesta: El Event Loop es el mecanismo central de Node.js que permite manejar operaciones asíncronas sin bloquear el hilo principal. Se encarga de escuchar y despachar eventos, ejecutando callbacks y gestionando tareas como operaciones de I/O, temporizadores, promesas, etc. Gracias a él, Node.js puede manejar muchas conexiones concurrentes de manera eficiente en un solo hilo.
+
+2. Node.js es un entorno de ejecución multiplataforma basado en JavaScript, es de código abierto y principalmente se usa para servidores web. ¿Esto que quiere decir?
+* Respuesta:  a. Quiere decir que lo utilizan los programadores Backend.
+
+3. En el tema de node ¿Qué es el stack de un proceso? esto es algo que hablamos en la clase pasada
+* Respuesta:  d. Todas las respuestas son correctas
+
+4. ¿Qué es una pila tecnológica? Al seleccionar la respuesta, presentar luego un ejemplo
+* Respuesta: e. Es un conjunto de tecnologías que se combinan para desarrollar un aplicación web completa.
+* Ejemplo:
+  Stack MERN:
+  - MongoDB: Base de datos NoSQL para almacenamiento.
+  - Express.js: Framework de backend sobre Node.js para estructurar las rutas y APIs.
+  - React: Biblioteca de frontend para construir la interfaz de usuario en el navegador.
+  - Node.js: Entorno de ejecución en el servidor que corre el backend.
+
+## Tarea: Agregar actividad con GitHub: como solucionar el error
+### fatal: not a git repository (or any of the parent directories): .git
+### ¿Por qué motivos ocurre este error? agrega tu solución de tu propia investigación
+
+### Respuesta de por qué motivos ocurre este error:
+
+- Discrepancia de ruta entre la terminal y el proyecto: La carpeta .git existe en el disco, pero la terminal se encuentra abierta en un directorio superior, paralelo o dentro de una carpeta hermana. Git busca hacia arriba en el árbol de directorios, pero nunca hacia abajo o hacia los lados.
+- Corrupción o estructura incompleta en .git: Git valida que .git sea un directorio funcional revisando archivos clave como HEAD y carpetas como refs/ y objects/. Si una clonación se interrumpió, hubo un apagón o se borró el archivo HEAD, Git lo considera inválido.
+- Es un archivo plano con un puntero roto (worktree o submódulo): En configuraciones avanzadas, .git no es una carpeta sino un archivo de texto que apunta a otra ruta (mediante gitdir: <ruta>). Si la carpeta de destino se movió o renombró, el puntero queda roto.
+- Problema de permisos o propiedad de usuario: Si los archivos de .git fueron creados con permisos de administrador (root / sudo) o por otro usuario del sistema, Git bloquea la lectura por motivos de seguridad o falta de permisos de acceso.
+
+* Solución al error:
+
+- 1- Reparar o regenerar la configuración con el comando:
+```
+  git init
+```
+- 2- Alinear la terminal con la ubicación exacta de .git
+- en windows powershell 
+
+``` 
+Get-Location
+Get-ChildItem -Force 
+```
+- Si ves que .git está dentro de una subcarpeta (por ejemplo, mi-app/.git), ingresa a ella antes de ejecutar comandos:
+```
+cd mi-app
+git status
+```
+
+- 3- Corregir permisos de lectura y escritura
+- En Windows: abre la terminal como Administrador o verifica las propiedades de la carpeta .git > pestaña Seguridad para asegurar que tu usuario tenga control total.
+
+- 4- Si .git es un archivo de texto (submódulo/worktree)
+- Abre el archivo .git con un editor de texto o en la terminal:
+```
+cat .git
+```
+
+- Si contiene gitdir: <ruta>, verifica que la ruta indicada exista realmente en el disco. Si la ruta cambió, corrígela manualmente para que coincida con la ubicación real del directorio del módulo.
+
+
+
+
 ## Autores
 
 - [@FranciscoKnap](https://github.com/franciscoknap3)

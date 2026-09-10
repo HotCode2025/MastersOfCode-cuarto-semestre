@@ -67,6 +67,20 @@
     transition: transform 0.2s ease-in-out;
     z-index: 2;
 }
+.cart-counter {
+    display: none;
+    position: fixed;
+    top: 89vh;
+    right: 27px;
+    color: #fff;
+    text-align: center;
+    background-color: #ed3434;
+    padding: 4px;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    font-size: 15px;
+}
 
 .cart-btn:hover{
     cursor: pointer;
