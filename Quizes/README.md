@@ -147,7 +147,24 @@ cat .git
 - Si contiene gitdir: <ruta>, verifica que la ruta indicada exista realmente en el disco. Si la ruta cambió, corrígela manualmente para que coincida con la ubicación real del directorio del módulo.
 
 
+## 16/09/2026
 
+* Respuestas
+1. En el mundo de la programación ¿Qué significa revisiones de código?
+
+* Respuesta correcta: a-Se trata de una práctica donde un profesional del software revisa el código escrito por otro en búsqueda de mejorarlo.
+
+2. En programación un código podría ser optimizado, hacerlo más limpio y escalable a largo plazo, haz una definición del significado de ESCALABILIDAD dentro de este contexto. Debes ampliar la respuesta investigando
+
+La escalabilidad se refiere a la capacidad de un sistema, red o proceso para manejar un crecimiento significativo (ya sea en volumen de datos, cantidad de usuarios o complejidad) sin comprometer su rendimiento, funcionalidad o mantenibilidad. Un código escalable está diseñado de manera que, ante futuras expansiones o cambios, no sea necesario reescribirlo desde cero, sino que pueda adaptarse con modificaciones mínimas. Esto implica: -Arquitectura modular: Dividir el código en componentes independientes y reutilizables. -Eficiencia en recursos: Optimizar el uso de memoria, procesamiento y almacenamiento. -Flexibilidad: Permitir la integración de nuevas funcionalidades sin afectar las existentes. Ejemplo: Una aplicación web escalable puede pasar de servir a 100 usuarios a 1 millón sin caídas o lentitud extrema, gracias a técnicas como balanceo de carga, bases de datos distribuidas y código optimizado..<br/>
+
+3. Don´t repeat yourself ¿A qué apunta esta frase? y ¿Cuál es su significado en programación? Debes ampliar la respuesta investigando
+
+Don’t Repeat Yourself (DRY) significa “No te repitas”. Es un principio de programación que busca evitar repetir el mismo código o lógica varias veces. Para esto se pueden utilizar funciones o componentes reutilizables. De esta manera, el código queda más limpio, ordenado y es más fácil de modificar y mantener. <br/>
+
+4. En programación cuando nos encontramos con errores ¿Cuál crees que será la respuesta correcta frente a la solución?
+
+* Respuesta correcta : b- No siempre la misma solución, va a ser la solución, esto es que cuando hablamos de código podemos llegar a diferentes soluciones y si funciona está bien hecho.
 
 ## Autores
 
