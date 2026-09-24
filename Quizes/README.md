@@ -166,6 +166,120 @@ Don’t Repeat Yourself (DRY) significa “No te repitas”. Es un principio de 
 
 * Respuesta correcta : b- No siempre la misma solución, va a ser la solución, esto es que cuando hablamos de código podemos llegar a diferentes soluciones y si funciona está bien hecho.
 
+## 23/09/2026
+
+* Respuestas
+
+1. Explica en pocas palabras como agregarías personajes al juego desde el código, seguramente deberán investigar para esta respuesta o puede que la tengan, deben explicar como lo harían desde el HTML o el JS.
+
+* Respuesta: 
+
+Para agregar un nuevo personaje, por ejemplo Iroh, se deben realizar ajustes en el HTML y en
+el archivo JavaScript: <br/>
+A. Desde el HTML (avatar01.html)
+```
+Dentro del contenedor <div class="tarjetas-personajes">, se agrega un nuevo elemento
+<label> con su etiqueta <input type="radio">, asignándole un id único y conservando el
+atributo name="personaje":
+<label class="tarjeta iroh">
+ <input type="radio" name="personaje" id="iroh"> Iroh
+</label>
+```
+B. Desde el JS (index.js)
+```
+No hace falta modificar la selección del jugador, ya que
+document.querySelector('input[name="personaje"]:checked') detecta dinámicamente
+cualquier personaje agregado en el HTML.
+Solo se debe actualizar la función seleccionarPersonajeEnemigo() para que la computadora
+también pueda elegirlo:
+Agregar el nuevo personaje al arreglo personajes:
+let personajes = ['Zuko', 'Katara', 'Aang', 'Toph', 'Iroh']
+Ajustar el rango de la función aleatoria de (0, 3) a (0, 4) para incluir el nuevo índice:
+let personajeAleatorio = personajes[aleatorio(0, 4)]
+```
+
+2. ¿Qué significa darle feedback al otro desarrollador? 
+
+* Respuesta: Dar feedback a otro desarrollador significa revisar su trabajo y realizar observaciones
+constructivas sobre el código que escribió.
+Tiene como objetivo:
+Mejorar la calidad del código: Detectar errores, fallos de lógica o problemas de rendimiento
+antes de unirlos a la rama principal.
+Mantener buenas prácticas y estándares: Verificar que se sigan las convenciones del equipo
+(nombres de variables, estructura, limpieza del código).
+Compartir conocimiento: Explicar cómo resolver un problema de forma más eficiente o
+aprender de la solución del compañero.
+Fomentar la colaboración: El feedback siempre debe ser respetuoso, enfocado en el código y
+no en la persona, proponiendo soluciones en lugar de solo señalar errores.
+
+3. En HTML ¿Se aplica el paradigma de la POO?
+* Respuesta correcta: e. No, El que HTML tenga etiquetas padre e hijas, no hace que tenga ninguna relación con POO
+
+4. Les presento un problema a resolver:
+Un estudiante estaba trabajando en GitHub, pero en su ordenador, pusheando todo lo que
+venía haciendo en su propia rama, este era un repositorio grupal, ya terminando su trabajo,
+haciendo merge hasta la rama main, se acordó que algo le faltaba, y era extenso, comenzó a
+avanzar, genero un commit, después de una interrupción siguió con su trabajo, pero cansado
+decidió terminar al siguiente día. A la mañana se vino directamente a terminar su trabajo
+inconcluso, abre el repositorio en su ordenador y encuentra que esta en la rama main, al
+tener cosas en el área de trabajo, no le permitió cambiar de rama. ¿Cuáles son las posibles
+soluciones que debería hacer? Haz un resumen con cada paso desde la terminal y sus
+comandos hacía GitHub.<br/>
+
+El problema ocurre porque hay cambios no confirmados (uncommitted changes) en el área de
+trabajo sobre la rama main, lo que impide hacer un cambio de rama (checkout). A
+continuación, se presentan las soluciones principales con sus comandos paso a paso: <br/>
+
+Opción 1: Usar git stash para mover los cambios a la rama correcta. Esta opción guarda
+temporalmente el trabajo inconcluso en una pila en memoria, permite cambiar a la rama de
+trabajo y recuperar allí los cambios sin perder nada.<br/>
+```
+Guardar temporalmente los cambios del área de trabajo:
+
+git stash
+
+Cambiarse a la rama de trabajo correspondiente:
+
+git checkout mi-rama-de-trabajo
+
+Recuperar y aplicar los cambios guardados:
+
+git stash pop
+
+Agregar los archivos al área de preparación (staging):
+
+git add .
+
+Realizar el commit con el trabajo completado:
+
+git commit -m "Trabajo finalizado"
+
+Subir los cambios a GitHub:
+
+git push origin mi-rama-de-trabajo
+``` 
+
+Opción 2: Crear una nueva rama a partir del estado actual Si prefiere continuar directamente
+sin tocar la rama anterior, puede crear una rama nueva que se llevará automáticamente todos
+los cambios del área de trabajo.<br/>
+```
+Crear y cambiarse a una nueva rama arrastrando los cambios:
+
+git checkout -b nueva-rama-trabajo
+
+Agregar los archivos modificados:
+
+git add .
+
+Guardar los cambios mediante commit:
+
+git commit -m "Se finalizan las tareas pendientes"
+
+Subir la nueva rama a GitHub:
+
+git push origin nueva-rama-trabajo
+```
+
 ## Autores
 
 - [@FranciscoKnap](https://github.com/franciscoknap3)
