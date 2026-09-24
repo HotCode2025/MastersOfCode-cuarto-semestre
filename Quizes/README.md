@@ -178,23 +178,36 @@ Para agregar un nuevo personaje, por ejemplo Iroh, se deben realizar ajustes en 
 el archivo JavaScript: <br/>
 A. Desde el HTML (avatar01.html)
 ```
-Dentro del contenedor <div class="tarjetas-personajes">, se agrega un nuevo elemento
-<label> con su etiqueta <input type="radio">, asignándole un id único y conservando el
-atributo name="personaje":
+Dentro del contenedor <div class="tarjetas-personajes">, 
+
+se agrega un nuevo elemento <label> con su etiqueta <input type="radio">, 
+
+asignándole un id único y conservando el atributo name="personaje":
+
 <label class="tarjeta iroh">
+
  <input type="radio" name="personaje" id="iroh"> Iroh
+
 </label>
 ```
 B. Desde el JS (index.js)
 ```
-No hace falta modificar la selección del jugador, ya que
-document.querySelector('input[name="personaje"]:checked') detecta dinámicamente
-cualquier personaje agregado en el HTML.
+No hace falta modificar la selección del jugador, ya que 
+
+document.querySelector('input[name="personaje"]:checked') 
+
+detecta dinámicamente cualquier personaje agregado en el HTML.
+
 Solo se debe actualizar la función seleccionarPersonajeEnemigo() para que la computadora
+
 también pueda elegirlo:
+
 Agregar el nuevo personaje al arreglo personajes:
+
 let personajes = ['Zuko', 'Katara', 'Aang', 'Toph', 'Iroh']
-Ajustar el rango de la función aleatoria de (0, 3) a (0, 4) para incluir el nuevo índice:
+
+Ajustar el rango de la función aleatoria de (0, 3) a (0, 4) para incluir el nuevo índice: 
+
 let personajeAleatorio = personajes[aleatorio(0, 4)]
 ```
 
