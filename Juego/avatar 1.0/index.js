@@ -1,3 +1,31 @@
+const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+const sectionReiniciar = document.getElementById('reiniciar')
+const botonPersonajeJugador = document.getElementById('boton-personaje')
+const botonPunio = document.getElementById('boton-punio')
+const botonPatada = document.getElementById('boton-patada')
+const botonBarrida = document.getElementById('boton-barrida')
+const botonReiniciar = document.getElementById('boton-reiniciar')
+
+const sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje')
+const inputZuko = document.getElementById('zuko')
+const inputKatara = document.getElementById('katara')
+const inputAang = document.getElementById('aang')
+const inputToph = document.getElementById('toph')
+const inputSokka = document.getElementById('sokka')
+const inputAzula = document.getElementById('azula')
+const spanPersonajeJugador = document.getElementById('personaje-jugador')
+
+const spanPersonajeEnemigo = document.getElementById('personaje-enemigo')
+
+const spanVidasJugador = document.getElementById('vidas-jugador')
+const spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
+const sectionMensajes = document.getElementById('resultado')
+const ataqueDelJugador = document.getElementById('ataque-jugador')
+const ataqueDelEnemigo = document.getElementById('ataque-enemigo')
+
+let avatares = []  //creamos el arreglo para los personajes
+
 let ataqueJugador
 let ataqueEnemigo
 let personajeJugadorObjeto 
@@ -22,6 +50,8 @@ let sokka = new Personaje("Sokka", "🪃", "No maestro", "#34495e")
 let azula = new Personaje("Azula", "⚡", "Fuego", "#8e44ad")
 
 let personajesDisponibles = [zuko, katara, aang, toph, sokka, azula]
+
+avatares.push(zuko, katara, aang, toph) //usamos el método push
 
 function iniciarJuego() {
     document.getElementById('seleccionar-ataque').style.display = 'none'
