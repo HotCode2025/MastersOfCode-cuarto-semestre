@@ -293,6 +293,18 @@ Subir la nueva rama a GitHub:
 git push origin nueva-rama-trabajo
 ```
 
+## 30/09/2026
+* Respuestas
+
+1. Siempre que quieras acceder a un atributo o método dentro de la clase ¿Con qué lo harás?
+* Respuesta correcta: a. Lo harás con la palabra reservada this
+
+2. Al usar una clase como una función y pasándole la información propia del objeto, internamente ¿Nos encontramos llamando a quien?
+* Respuesta correcta: b. Nos encontramos llamando al constructor de la clase que devolverá como resultado el objeto
+
+3. Con los conceptos básicos de la POO ¿Esto es suficiente para crear un software profesional?
+* Respuesta correcta: a. No, hay mucho más para aprender, no se puede dominar tal nivel con solo lo básico
+
 ## Autores
 
 - [@FranciscoKnap](https://github.com/franciscoknap3)
