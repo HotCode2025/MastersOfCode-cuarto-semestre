@@ -36,8 +36,14 @@ public class EstudiantesApplication implements CommandLineRunner{
         var salir = false;
         var consola = new Scanner(System.in);
         while (!salir) {
-            mostrarMenu();
-            salir = ejecutarOpciones(consola);
+            try {
+                mostrarMenu();
+                salir = ejecutarOpciones(consola);
+            } catch (NumberFormatException e) {
+                logger.info(nl + "Error: Debe ingresar un valor numerico valido." + nl);
+            } catch (Exception e) {
+                logger.info(nl + "Ocurrio un error inesperado: " + e.getMessage() + nl);
+            }
             logger.info(nl);
         }
     }
