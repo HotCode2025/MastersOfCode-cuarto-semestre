@@ -21,6 +21,6 @@ public class Libro {
     Integer idLibro;
     String nombreLibro;
     String autor;
-    String precio;
+    Double precio;
     Integer existencias;
 }
