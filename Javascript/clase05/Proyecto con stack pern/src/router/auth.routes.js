@@ -3,7 +3,7 @@ import { signin,  signup, signout, profile } from "../controllers/auth.controlle
 
 const router = Router();
 
-router.post("/signin", signinn );
+router.post("/signin", signin );
 
 router.post("/signup", signup);
 
