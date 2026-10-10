@@ -39,6 +39,7 @@ class Personaje {
         this.color = color       
         this.vidas = 3
         this.vidasMaximas = 3
+        this.ataques = []
     }
 }
 
@@ -51,7 +52,50 @@ let azula = new Personaje("Azula", "⚡", "Fuego", "#8e44ad")
 
 let personajesDisponibles = [zuko, katara, aang, toph, sokka, azula]
 
-avatares.push(zuko, katara, aang, toph) //usamos el método push
+// Ataques para Zuko
+zuko.ataques.push(
+    { nombre: 'Punio', id: 'boton-punio' },
+    { nombre: 'Patada', id: 'boton-patada' },
+    { nombre: 'Barrida', id: 'boton-barrida' }
+)
+
+// Ataques para Katara
+katara.ataques.push(
+    { nombre: 'Punio', id: 'boton-punio' },
+    { nombre: 'Patada', id: 'boton-patada' },
+    { nombre: 'Barrida', id: 'boton-barrida' }
+)
+
+// Ataques para Aang
+aang.ataques.push(
+    { nombre: 'Punio', id: 'boton-punio' },
+    { nombre: 'Patada', id: 'boton-patada' },
+    { nombre: 'Barrida', id: 'boton-barrida' }
+)
+
+// Ataques para Toph
+toph.ataques.push(
+    { nombre: 'Punio', id: 'boton-punio' },
+    { nombre: 'Patada', id: 'boton-patada' },
+    { nombre: 'Barrida', id: 'boton-barrida' }
+)
+
+// Ataques para Sokka
+sokka.ataques.push(
+    { nombre: 'Punio', id: 'boton-punio' },
+    { nombre: 'Patada', id: 'boton-patada' },
+    { nombre: 'Barrida', id: 'boton-barrida' }
+)
+
+// Ataques para Azula
+azula.ataques.push(
+    { nombre: 'Punio', id: 'boton-punio' },
+    { nombre: 'Patada', id: 'boton-patada' },
+    { nombre: 'Barrida', id: 'boton-barrida' }
+)
+console.log(zuko.ataques);
+
+avatares.push(zuko, katara, aang, toph, sokka, azula) //usamos el método push
 
 function iniciarJuego() {
     document.getElementById('seleccionar-ataque').style.display = 'none'
