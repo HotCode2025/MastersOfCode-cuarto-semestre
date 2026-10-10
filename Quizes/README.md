@@ -305,6 +305,20 @@ git push origin nueva-rama-trabajo
 3. Con los conceptos básicos de la POO ¿Esto es suficiente para crear un software profesional?
 * Respuesta correcta: a. No, hay mucho más para aprender, no se puede dominar tal nivel con solo lo básico
 
+
+## 7/09/2026
+* Respuestas
+
+1. El termino renderizar ¿A qué hace referencia?
+* Respuesta correcta: c. Hace referencia al proceso que lleva a cabo el navegador para leer el código HTML y CSS para posteriormente dibujarlo en el navegador
+
+2. ¿Qué significa el termino o ciclo forEach()?
+* Respuesta correcta: b. El significado literal seria: por cada elemento que vayas iterando, haz algo
+
+3. El término iterar hace referencia ¿A qué?
+* Respuesta correcta: c. Hace referencia a recorrer los elementos de un array, uno por uno en el mismo orden en el que se encuentran
+
+
 ## Autores
 
 - [@FranciscoKnap](https://github.com/franciscoknap3)
