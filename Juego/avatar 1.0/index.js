@@ -1,3 +1,8 @@
+
+const contenedorTarjetas = document.getElementById('contenedorTarjetas')
+
+let opcionAvatares
+
 const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
 const sectionReiniciar = document.getElementById('reiniciar')
 const botonPersonajeJugador = document.getElementById('boton-personaje')
@@ -97,6 +102,19 @@ console.log(zuko.ataques);
 
 avatares.push(zuko, katara, aang, toph, sokka, azula) //usamos el método push
 
+// Recorremos el arreglo de avatares para crear las tarjetas
+avatares.forEach((avatar) => {
+    let idPersonaje = avatar.nombre.toLowerCase();
+
+    opcionAvatares = `
+        <label class="tarjeta ${idPersonaje}">
+            <input type="radio" name="personaje" id="${idPersonaje}"> ${avatar.nombre} ${avatar.icono}
+        </label>
+    `;
+    
+    // Inyectamos la tarjeta en el HTML
+    contenedorTarjetas.innerHTML += opcionAvatares;
+});
 function iniciarJuego() {
     document.getElementById('seleccionar-ataque').style.display = 'none'
     document.getElementById('reiniciar').style.display = "none"
