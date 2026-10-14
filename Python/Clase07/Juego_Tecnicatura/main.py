@@ -1,10 +1,13 @@
-import random 
+import random
 import pygame
 import sys
+import os
 
 from personaje import Personaje, Enemigo
 from explosiones import Explosion
-from constantes import SCREEN_WIDTH, SCREEN_HEIGTH, ASSETS_PATH, IMPERIAL_MARCH_PATH, START_IMAGE_PATH, ESTRELLA_PATH, FONDO1_PATH
+from constantes import SCREEN_WIDTH, SCREEN_HEIGTH, ASSETS_PATH, IMPERIAL_MARCH_PATH, START_IMAGE_PATH, ESTRELLA_PATH, \
+    FONDO1_PATH
+
 
 def mostrar_pantalla_inicio(screen):
     imagen_inicio = pygame.image.load(START_IMAGE_PATH).convert()
@@ -16,32 +19,38 @@ def mostrar_pantalla_inicio(screen):
     pygame.mixer.music.play()
 
     esperando = True
-    
+
     while esperando:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                if event.type == pygame.KEYDOWN:                      esperando = False
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                esperando = False
+
 
 def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGTH))
     pygame.display.set_caption('Amenaza Fantasma')
 
-    icon = pygame.image.load(f'{ASSETS_PATH}/images/fondo.jpg').convert()
+    icon_path = os.path.join(ASSETS_PATH, 'images', 'logo.png')
+    icon = pygame.image.load(icon_path).convert_alpha()
     pygame.display.set_icon(icon)
 
-    fondo = pygame.image.load(f'{ASSETS_PATH}/images/fondo.jpg').convert()
+    fondo = pygame.image.load(START_IMAGE_PATH).convert()
     fondo = pygame.transform.scale(fondo, (SCREEN_WIDTH, SCREEN_HEIGTH))
 
-    fondo1 = pygame.image.load(f'{ASSETS_PATH}/images/fondo.jpg').convert()
+    fondo1 = pygame.image.load(FONDO1_PATH).convert()
     fondo1 = pygame.transform.scale(fondo1, (SCREEN_WIDTH, SCREEN_HEIGTH))
 
-    estrella = pygame.image.load(f'{ASSETS_PATH}/images/fondo.jpg').convert()
+    estrella = pygame.image.load(ESTRELLA_PATH).convert()
     estrella = pygame.transform.scale(estrella, (SCREEN_WIDTH, SCREEN_HEIGTH))
 
-    
-    sonido_laser = pygame.mixer.Sound(f'{ASSETS_PATH}/sounds/laserdis.mp3')
+    sonido_laser = pygame.mixer.Sound(os.path.join(ASSETS_PATH, 'sounds', 'laserdis.mp3'))
+
+    sonido_explosion = pygame.mixer.Sound(os.path.join(ASSETS_PATH, 'sounds', 'explosion.mp3'))
+    pygame.mixer.music.load(os.path.join(ASSETS_PATH, 'sounds', 'efectos.mp3'))
+    pygame.mixer.music.play(-1)
 
     personaje = Personaje(SCREEN_WIDTH // 2, SCREEN_HEIGTH // 2)
     enemigos = []
@@ -73,11 +82,11 @@ def main():
 
         personaje.mover(dx, dy)
 
-        if keys[pygame.K_SPACE]: 
+        if keys[pygame.K_SPACE]:
             personaje.lanzar_laser()
             sonido_laser.play()
 
-        for enemigo in enemigos[:]: 
+        for enemigo in enemigos[:]:
             enemigo.mover()
             if enemigo.rect.top > SCREEN_HEIGTH:
                 enemigos.remove(enemigo)
@@ -85,12 +94,12 @@ def main():
                 for laser in personaje.lasers[:]:
                     if enemigo.rect.colliderect(laser.rect):
                         explosiones.append(Explosion(enemigo.rect.centerx, enemigo.rect.centery))
+                        sonido_explosion.play()
                         enemigos.remove(enemigo)
                         personaje.lasers.remove(laser)
                         puntos += 10
-                        break 
+                        break
 
-            
             if enemigo.rect.colliderect(personaje.shape):
                 if not personaje.recibir_dano():
                     running = False
@@ -102,7 +111,6 @@ def main():
 
         explosiones = [explosion for explosion in explosiones if explosion.actualizar()]
 
-        
         if puntos >= 250:
             if fondo_actual == fondo:
                 fondo_actual = estrella
@@ -128,27 +136,38 @@ def main():
         pygame.display.flip()
         clock.tick(60)
 
-    # GAME OVER
     screen.fill((0, 0, 0))
-    font = pygame.font.Font(None, 74) 
+    font = pygame.font.Font(None, 74)
     texto_game_over = font.render('GAME OVER', True, (255, 0, 0))
     font_pequena = pygame.font.Font(None, 36)
-    texto_mensaje_final = font_pequena.render("QUE LA FUERZA TE ACOMPAÑE. !!!", True, (255, 255, 255))
+    texto_mensaje_final = font_pequena.render("Presiona ESPACIO para reiniciar o ESC para salir", True, (255, 255, 255))
 
     screen.blit(texto_game_over, (SCREEN_WIDTH // 2 - texto_game_over.get_width() // 2, SCREEN_HEIGTH // 2 - 50))
-    screen.blit(texto_mensaje_final, (SCREEN_WIDTH // 2 - texto_mensaje_final.get_width() // 2, SCREEN_HEIGTH // 2 + 20))
-    
+    screen.blit(texto_mensaje_final,
+                (SCREEN_WIDTH // 2 - texto_mensaje_final.get_width() // 2, SCREEN_HEIGTH // 2 + 20))
+
     pygame.display.flip()
-    pygame.time.wait(3000)
-    pygame.quit()
-    sys.exit()
+
+    esperando = True
+    while esperando:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    main()
+                elif event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
+
 
 if __name__ == "__main__":
     pygame.init()
     pygame.mixer.init()
-    
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGTH)) 
-    
+
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGTH))
+
     mostrar_pantalla_inicio(screen)
-    
+
     main()

@@ -4,12 +4,11 @@ from constantes import ASSETS_PATH
 
 class Personaje:
     def __init__(self, x, y):
-        # CORREGIDO: Se ajustó al nombre real del archivo en tu carpeta
-        self.image = pygame.image.load(f'{ASSETS_PATH}/images/jugador.jpg').convert()
+        self.image = pygame.image.load(os.path.join(ASSETS_PATH, 'images', 'Speeder.png')).convert_alpha()
         self.image = pygame.transform.scale(self.image, (95, 95))
         self.shape = self.image.get_rect(center=(x, y))
         self.lasers = []
-        self.energia = 100  # Barra de energía inicial
+        self.energia = 100
 
     def mover(self, dx, dy):
         self.shape.x += dx
@@ -32,31 +31,28 @@ class Personaje:
             laser.dibujar(screen)
             laser.mover()
 
-        # Dibujar la barra de energía
-        pygame.draw.rect(screen, (255, 0, 0), (10, 10, 100, 10))  # Barra de fondo
-        pygame.draw.rect(screen, (0, 255, 0), (10, 10, self.energia, 10))  # Barra de energía
+        pygame.draw.rect(screen, (255, 0, 0), (10, 10, 100, 10))
+        pygame.draw.rect(screen, (0, 255, 0), (10, 10, self.energia, 10))
 
 class Enemigo:
     def __init__(self, x, y):
-        # CORREGIDO: Se ajustó al formato .jpg que tienes en la carpeta
-        self.image = pygame.image.load(f'{ASSETS_PATH}/images/enemigo.jpg').convert()
+        self.image = pygame.image.load(os.path.join(ASSETS_PATH, 'images', 'enemigo.png')).convert_alpha()
         self.image = pygame.transform.scale(self.image, (80, 80))
         self.rect = self.image.get_rect(topleft=(x, y))
 
     def mover(self):
-        self.rect.y += 5  # Velocidad de movimiento del enemigo
+        self.rect.y += 5
 
     def dibujar(self, screen):
         screen.blit(self.image, self.rect.topleft)
 
 class Laser:
     def __init__(self, x, y):
-        # CORREGIDO: Se ajustó al nombre de tu archivo de láser
-        self.image = pygame.image.load(f'{ASSETS_PATH}/images/proyectil.jpg').convert()
+        self.image = pygame.image.load(os.path.join(ASSETS_PATH, 'images', 'lase1.png')).convert_alpha()
         self.rect = self.image.get_rect(center=(x, y))
 
     def mover(self):
-        self.rect.y -= 10  # Velocidad del láser
+        self.rect.y -= 10
 
     def dibujar(self, screen):
         screen.blit(self.image, self.rect.topleft)
