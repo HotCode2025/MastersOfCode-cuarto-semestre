@@ -1,10 +1,11 @@
 import pygame
+import os
 from constantes import ASSETS_PATH
 
 class Personaje:
     def __init__(self, x, y):
-        # Construye la ruta completa a la imagen del personaje
-        self.image = pygame.image.load(os.path.join(ASSETS_PATH, 'images', 'Speeder.png'))
+        # CORREGIDO: Se ajustó al nombre real del archivo en tu carpeta
+        self.image = pygame.image.load(f'{ASSETS_PATH}/images/jugador.jpg').convert()
         self.image = pygame.transform.scale(self.image, (95, 95))
         self.shape = self.image.get_rect(center=(x, y))
         self.lasers = []
@@ -37,8 +38,8 @@ class Personaje:
 
 class Enemigo:
     def __init__(self, x, y):
-        # Construye la ruta completa a la imagen del enemigo
-        self.image = pygame.image.load(f'{ASSETS_PATH}/images/enemigo.png')
+        # CORREGIDO: Se ajustó al formato .jpg que tienes en la carpeta
+        self.image = pygame.image.load(f'{ASSETS_PATH}/images/enemigo.jpg').convert()
         self.image = pygame.transform.scale(self.image, (80, 80))
         self.rect = self.image.get_rect(topleft=(x, y))
 
@@ -50,41 +51,12 @@ class Enemigo:
 
 class Laser:
     def __init__(self, x, y):
-        # Construye la ruta completa a la imagen del láser
-        self.image = pygame.image.load(f'{ASSETS_PATH}/images/lase1.png')
+        # CORREGIDO: Se ajustó al nombre de tu archivo de láser
+        self.image = pygame.image.load(f'{ASSETS_PATH}/images/proyectil.jpg').convert()
         self.rect = self.image.get_rect(center=(x, y))
 
     def mover(self):
         self.rect.y -= 10  # Velocidad del láser
 
     def dibujar(self, screen):
-        screen.blit(self.image, self.rect.topleft)
-
-
-
-
-
-class Explosion:
-    def __init__(self, x, y):
-        # Construye la ruta completa a las imágenes de la explosión
-        self.images = [pygame.image.load(os.path.join(ASSETS_PATH, 'images', f'regularExplosion0{i:02d}.png')) for i in range(9)]
-        self.index = 0  # Índice para la animación
-        self.image = self.images[self.index]  # Imagen actual
-        self.rect = self.image.get_rect(center=(x, y))  # Rectángulo de la imagen
-        self.frame_rate = 0  # Contador de frames para la animación
-        self.max_frames = 20  # Frames por imagen
-
-    def actualizar(self):
-        # Actualiza la animación
-        self.frame_rate += 1
-        if self.frame_rate >= self.max_frames:
-            self.frame_rate = 0
-            self.index += 1
-            if self.index >= len(self.images):
-                return False  # Termina la animación si se han mostrado todas las imágenes
-            self.image = self.images[self.index]
-        return True
-
-    def dibujar(self, screen):
-        # Dibuja la imagen en la pantalla
         screen.blit(self.image, self.rect.topleft)
