@@ -45,16 +45,18 @@ public class LibroFrom extends JFrame {
     }
 
     private void iniciarForma(){
+        if (panel == null) {
+            panel = new JPanel();
+        }
         setContentPane(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
         setSize(900, 700);
-        //Para obtener les dimenciones de la ventana
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension tamanioPantalla = toolkit.getScreenSize();
-        int x = (tamanioPantalla.width - getWidth()/2);
-        int y = (tamanioPantalla.height - getHeight()/2);
+        int x = (tamanioPantalla.width - getWidth()) / 2;
+        int y = (tamanioPantalla.height - getHeight()) / 2;
         setLocation(x, y);
+        setVisible(true);
     }
 
     private void agregarLibro(){

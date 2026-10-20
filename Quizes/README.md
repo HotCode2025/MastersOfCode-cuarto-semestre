@@ -318,7 +318,42 @@ git push origin nueva-rama-trabajo
 3. El término iterar hace referencia ¿A qué?
 * Respuesta correcta: c. Hace referencia a recorrer los elementos de un array, uno por uno en el mismo orden en el que se encuentran
 
+## 14/10/2026
+* Respuesta
+1. Investigación: 
+Cuando estamos trabajando en un repositorio con un grupo de Developers,
+es fundamental tener la rama main como principal, una rama secundaria,
+como second o con el nombre que desees, y una rama que pertenezca a
+cada colaborador.
+En un día normal de trabajo, enciendes tu ordenador y comienzas a 
+trabajar, cargando tu código, terminas y haces tu commit, cuando
+vas a pushear estos cambios a tu rama de trabajo, te das cuenta
+que estuviste trabajando todo el día en la rama main.
+¿Haz tu investigación como grupo, de qué es lo que harías correctamente
+para solucionar este problema?
 
+* Solucion:
+1. Diagnóstico de la situación
+Identificamos que los cambios y commits se realizaron localmente en la rama main. Dado que aún no se ha ejecutado el push al servidor, el repositorio remoto no se ha visto afectado y la solución puede realizarse de manera segura sin interrumpir el flujo de trabajo del equipo.
+
+2. Procedimiento a seguir, paso a paso para solucionar el problema
+
+1. Salvar los cambios en nuestra rama de trabajo: Creación de la rama personal a partir de la rama main actual. Esto traslada automáticamente todos los commits realizados en el día hacia la nueva rama.
+```
+git checkout -b nombre-de-tu-rama
+```
+2. Restaurar la rama main local al estado limpio: Regreso a la rama main:
+git checkout main
+
+Reinicio de main para alinearla exactamente con el estado actual del servidor remoto (origin/main), descartando los commits locales realizados por error en esta rama:
+```
+git reset --hard origin/main
+```
+3. Subir los cambios correctamente al repositorio: Cambio a la rama personal para subir el trabajo correspondiente al repositorio remoto:
+```
+git checkout nombre-de-tu-rama
+git push origin nombre-de-tu-rama
+```
 ## Autores
 
 - [@FranciscoKnap](https://github.com/franciscoknap3)
