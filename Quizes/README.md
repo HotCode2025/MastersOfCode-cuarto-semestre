@@ -354,6 +354,29 @@ git reset --hard origin/main
 git checkout nombre-de-tu-rama
 git push origin nombre-de-tu-rama
 ```
+
+## 21/10/2026
+* Respuestas
+
+1. Investigación: Cuando tienes la oportunidad de tener varios dispositivos, un celular de alta gama, una tableta, una notebook y una PC de escritorio, y trabajas desde cada dispositivo, codeando y colaborando con un grupo de trabajo, ¿Como consideras a cada dispositivo dentro del control de versiones? ¿Qué información puedes agregar con respecto a esto u tu opinión, perspectiva? Cuantame en tus propias palabras tu objetividad en este tema.
+
+Respuestas:
+1. ¿Cómo consideramos a cada dispositivo dentro del control de versiones?
+Desde la arquitectura de un sistema distribuido como Git, cada dispositivo funciona como un repositorio local independiente, mientras que el servidor remoto (como GitHub) actúa como el punto central de integración. Funcionalmente, los clasificamos así:
+*	PC de escritorio: Nodo principal de trabajo pesado. Se utiliza para el desarrollo continuo, compilación, ejecución de bases de datos locales y resolución de conflictos de código complejos.
+*	Notebook: Nodo portátil de continuidad. Permite seguir programando, hacer commits y sincronizar cambios fuera del entorno fijo de trabajo.
+*	Tableta y celular de alta gama: Nodos de revisión, gestión y monitoreo. Se utilizan para revisar pull requests, aprobar commits, responder issues del equipo o realizar correcciones pequeñas y urgentes de código.
+
+2. Opinión, perspectiva e información adicional
+* Nuestra perspectiva objetiva sobre trabajar con múltiples dispositivos en un entorno colaborativo se resume en los siguientes puntos:
+
+1.	Independencia del hardware: La principal ventaja del control de versiones es que desvincula el avance del proyecto de un equipo físico específico. El historial de commits se mantiene uniforme sin importar desde cuál dispositivo se haya trabajado.
+2.	El riesgo de desincronización: El mayor reto no es técnico sino metodológico. Trabajar con varios dispositivos exige una disciplina estricta al cambiar de equipo para evitar conflictos innecesarios (merge conflicts).
+3.	Buenas prácticas imprescindibles: Para evitar problemas al colaborar en grupo con múltiples dispositivos, aplicamos siempre dos reglas:
+	  * Regla de entrada y salida: Hacer git pull antes de empezar a trabajar en cualquier dispositivo y git push al finalizar la sesión.
+	  * Uso estricto de ramas (feature branches): Desarrollar las tareas en ramas secundarias para que los cambios de cualquier dispositivo pasen por revisión antes de integrarse a la rama principal (main).
+
+
 ## Autores
 
 - [@FranciscoKnap](https://github.com/franciscoknap3)
