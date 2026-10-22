@@ -356,11 +356,10 @@ git push origin nombre-de-tu-rama
 ```
 
 ## 21/10/2026
-* Respuestas
 
 1. Investigación: Cuando tienes la oportunidad de tener varios dispositivos, un celular de alta gama, una tableta, una notebook y una PC de escritorio, y trabajas desde cada dispositivo, codeando y colaborando con un grupo de trabajo, ¿Como consideras a cada dispositivo dentro del control de versiones? ¿Qué información puedes agregar con respecto a esto u tu opinión, perspectiva? Cuantame en tus propias palabras tu objetividad en este tema.
 
-Respuestas:
+* Respuestas:
 1. ¿Cómo consideramos a cada dispositivo dentro del control de versiones?
 Desde la arquitectura de un sistema distribuido como Git, cada dispositivo funciona como un repositorio local independiente, mientras que el servidor remoto (como GitHub) actúa como el punto central de integración. Funcionalmente, los clasificamos así:
 *	PC de escritorio: Nodo principal de trabajo pesado. Se utiliza para el desarrollo continuo, compilación, ejecución de bases de datos locales y resolución de conflictos de código complejos.
