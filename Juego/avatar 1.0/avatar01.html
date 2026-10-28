@@ -11,75 +11,122 @@
 </head>
 <body>
 
-    <h1 class="titulo-avatar">AVATAR</h1>
-    <h4>LA LEYENDA DE AANG</h4>
-
-    <section id="reglas-del-juego">
-        <h2>Reglas del Juego</h2>
-        <ol>
-            <li><strong>Selección de Personajes:</strong> Elige a Zuko, Katara, Aang o Toph.</li>
-            <li><strong>Combate:</strong> Puño ✊ vence a Barrida. Patada 🦶 vence a Puño. Barrida 👣 vence a Patada.</li>
-        </ol>
-    </section>
-
-    <button id="boton-reglas">Ver Reglas</button>
-    <button id="boton-jugar">Jugar</button>
-
-    <section id="seleccionar-personaje">
-        <h2>Elige tu Personaje</h2>
-        
-        <!--CLASE 07-->
-        <div id="contenedorTarjetas" class="tarjetas-personajes">
-            
+    <header class="encabezado">
+        <div class="elementos" aria-hidden="true">
+            <span class="el-agua">💧</span>
+            <span class="el-tierra">🪨</span>
+            <span class="el-fuego">🔥</span>
+            <span class="el-aire">🌪️</span>
         </div>
+        <h1 class="titulo-avatar">AVATAR</h1>
+        <h4 class="subtitulo">LA LEYENDA DE AANG</h4>
+    </header>
 
-        <button id="boton-personaje">Seleccionar</button>
-    </section>
+    <main>
+        <section id="seleccionar-personaje" class="pantalla">
+            <div class="panel">
+                <h2>Elige tu Personaje</h2>
 
-    <section id="seleccionar-ataque">
-        <h2>Elige tu ataque</h2>
-        
-        <div class="marcador">
-            <div class="contenedor-vida">
-                <p>Tu personaje (<span id="personaje-jugador">-</span>)</p>
-                <div class="barra-externa"><div id="barra-vida-jugador" class="barra-interna"></div></div>
+                <!--CLASE 07-->
+                <div id="contenedorTarjetas" class="tarjetas-personajes"></div>
+
+                <p id="mensaje-error" class="mensaje-error" role="alert"></p>
+
+                <div class="botonera">
+                    <button id="boton-reglas" class="btn-secundario">Ver Reglas</button>
+                    <button id="boton-personaje">Seleccionar</button>
+                </div>
             </div>
-            <div class="contenedor-vida">
-                <p>Enemigo (<span id="personaje-enemigo">-</span>)</p>
-                <div class="barra-externa"><div id="barra-vida-enemigo" class="barra-interna"></div></div>
+        </section>
+        <section id="reglas-del-juego" class="pantalla pantalla-enfocada">
+            <div class="panel">
+                <h2>Reglas del Juego</h2>
+                <ol class="reglas">
+                    <li><strong>Selección de Personajes:</strong> elegí entre Zuko, Katara, Aang, Toph, Sokka o Azula.</li>
+                    <li><strong>Mapa:</strong> movete con las flechas, WASD o los botones. Hay 3 rivales recorriendo el mundo.</li>
+                    <li><strong>Encuentro:</strong> si tocás a un rival en el mapa, empieza la batalla.</li>
+                    <li><strong>Combate:</strong> Puño ✊ vence a Barrida. Patada 🦶 vence a Puño. Barrida 👣 vence a Patada.</li>
+                    <li><strong>Victoria:</strong> cada personaje tiene 3 vidas. Derrotá a todos los rivales para ganar. Después de cada victoria recuperás tus vidas.</li>
+                </ol>
+                <button id="boton-cerrar-reglas">Entendido, volver</button>
             </div>
-        </div>
+        </section>
+        <section id="ver-mapa" class="pantalla">
+            <div class="hud">
+                <span class="chip">Jugás con <strong id="hud-jugador">-</strong></span>
+                <span class="chip">Rivales: <strong id="contador-enemigos">0</strong> <span id="iconos-enemigos"></span></span>
+                <button id="boton-reglas-mapa" class="btn-secundario btn-chico">📜 Reglas</button>
+            </div>
 
-        <div class="contenedor-botones">
-            <button id="boton-punio" class="btn-ataque">Punio ✊</button>
-            <button id="boton-patada" class="btn-ataque">Patada 🦶</button>
-            <button id="boton-barrida" class="btn-ataque">Barrida 👣</button>
-        </div>
-    </section>
+            <div class="marco-mapa">
+                <canvas id="mapa" width="320" height="240"></canvas>
+                <div id="aviso-combate" class="aviso-combate" aria-live="assertive"></div>
+            </div>
 
-    <section id="ver-mapa">
-    <h1 class="titulo">Recorre el mapa con tu personaje</h1>
-    <canvas id="mapa" width="320" height="240"></canvas>
-    
-    
-    <div>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
-    </div>
+            <p class="ayuda-mapa">Movete con las flechas o WASD y tocá a un rival para pelear.</p>
 
-    <button id="boton-reiniciar" onclick="reiniciarJuego()">Volver a Jugar</button>
-</section>
+            <div class="controles" aria-label="Controles de movimiento">
+                <button class="ctrl" data-dir="arriba" aria-label="Arriba">▲</button>
+                <button class="ctrl" data-dir="izquierda" aria-label="Izquierda">◀</button>
+                <button class="ctrl" data-dir="abajo" aria-label="Abajo">▼</button>
+                <button class="ctrl" data-dir="derecha" aria-label="Derecha">▶</button>
+            </div>
+        </section>
+        <section id="seleccionar-ataque" class="pantalla pantalla-enfocada">
+            <div class="panel panel-oscuro">
+                <h2>Elige tu ataque</h2>
 
-    <section id="mensajes">
-    </section>
+                <div class="arena">
+                    <div id="luchador-jugador" class="luchador">
+                        <span class="etiqueta">Tu personaje</span>
+                        <div class="retrato"><img alt=""></div>
+                        <p class="nombre-luchador" id="personaje-jugador">-</p>
+                        <span class="luchador-elemento"></span>
+                        <div class="barra-externa"><div id="barra-vida-jugador" class="barra-interna"></div></div>
+                        <span class="vidas" id="vidas-jugador"></span>
+                    </div>
 
-    <section id="reiniciar">
-        <button id="boton-reiniciar">Reiniciar Juego</button>
-    </section>
+                    <div class="vs">VS</div>
 
+                    <div id="luchador-enemigo" class="luchador">
+                        <span class="etiqueta">Enemigo</span>
+                        <div class="retrato"><img alt=""></div>
+                        <p class="nombre-luchador" id="personaje-enemigo">-</p>
+                        <span class="luchador-elemento"></span>
+                        <div class="barra-externa"><div id="barra-vida-enemigo" class="barra-interna"></div></div>
+                        <span class="vidas" id="vidas-enemigo"></span>
+                    </div>
+                </div>
+
+                <div id="contenedor-botones" class="contenedor-botones">
+                    <button id="boton-punio" class="btn-ataque">Puño ✊</button>
+                    <button id="boton-patada" class="btn-ataque">Patada 🦶</button>
+                    <button id="boton-barrida" class="btn-ataque">Barrida 👣</button>
+                </div>
+
+                <div id="resultado-combate" aria-live="polite"></div>
+
+                <div id="acciones-fin" class="botonera" hidden>
+                    <button id="boton-volver-mapa">Volver al mapa</button>
+                    <button id="boton-reiniciar" class="btn-secundario">Volver a Jugar</button>
+                </div>
+
+                <section id="mensajes" aria-live="polite"></section>
+            </div>
+        </section>
+    </main>
+    <div id="aviso-error" class="aviso-error" hidden></div>
+    <script>
+        window.mostrarErrorJuego = function (texto) {
+            var caja = document.getElementById('aviso-error')
+            caja.hidden = false
+            caja.innerHTML += '<p>⚠️ ' + texto + '</p>'
+        }
+        window.addEventListener('error', function (e) {
+            if (e.target && e.target.tagName === 'IMG') return
+            window.mostrarErrorJuego('Error en el código: ' + e.message + ' (línea ' + e.lineno + ')')
+        })
+    </script>
     <script src="index.js"></script>
-
 </body>
 </html>
