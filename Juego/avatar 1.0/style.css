@@ -155,3 +155,10 @@ button:disabled {
     background-color: rgba(0, 0, 0, 0.3); /*para darle un fondo semitransparente */
 }
 
+#seleccionar-ataque,
+#ver-mapa,
+#reiniciar,
+#reglas-del-juego,
+#boton-jugar {
+    display: none;
+}

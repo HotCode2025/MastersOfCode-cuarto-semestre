@@ -73,6 +73,16 @@ let azula = new Personaje("Azula", "⚡", "Fuego", "#8e44ad", "assets/azula.png"
 
 let personajesDisponibles = [zuko, katara, aang, toph, sokka, azula]
 
+function obtenerObjetoPersonaje() {
+    let personajeSeleccionado = document.querySelector('input[name="personaje"]:checked')
+    
+    for (let i = 0; i < avatares.length; i++) {
+        if (personajeSeleccionado && personajeSeleccionado.id === avatares[i].nombre.toLowerCase()) {
+            return avatares[i]
+        }
+    }
+}
+
 // Ataques para Zuko
 zuko.ataques.push(
     { nombre: 'Punio', id: 'boton-punio' },
@@ -194,7 +204,7 @@ function seleccionarPersonajeJugador() {
     seleccionarPersonajeEnemigo()
 
     sectionVerMapa.style.display = 'flex';
-    intervalo = setInterval(pintarPersonaje, 50);
+    iniciarMapa();
 }
 
 function seleccionarPersonajeEnemigo() { 
@@ -318,6 +328,40 @@ function moverArriba() {
 function detenerMovimiento() {
     personajeJugadorObjeto.velocidadX = 0;
     personajeJugadorObjeto.velocidadY = 0;
+}
+
+function sePresionoUnaTecla(event) {
+    switch (event.key) {
+        case 'ArrowUp':
+            moverArriba();
+            break;
+        case 'ArrowDown':
+            moverAbajo();
+            break;
+        case 'ArrowLeft':
+            moverIzquierda();
+            break;
+        case 'ArrowRight':
+            moverDerecha();
+            break;
+        default:
+            break;
+    }
+}
+
+function iniciarMapa() {
+    mapa.width = 320;
+    mapa.height = 240;
+
+    personajeJugadorObjeto = obtenerObjetoPersonaje();
+
+    intervalo = setInterval(pintarPersonaje, 50);
+    window.addEventListener('keydown', sePresionoUnaTecla);
+    window.addEventListener('keyup', detenerMovimiento);
+}
+
+function reiniciarJuego() {
+    location.reload();
 }
 
 window.addEventListener('load', iniciarJuego)
