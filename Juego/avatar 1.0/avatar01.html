@@ -26,16 +26,13 @@
     <button id="boton-jugar">Jugar</button>
 
     <section id="seleccionar-personaje">
-    <h2>Elige tu Personaje</h2>
-    
-    <!--CLASE 07-->
-    <div id="contenedorTarjetas" class="tarjetas-personajes">
+        <h2>Elige tu Personaje</h2>
         
-    </div>
-
-    <button id="boton-personaje">Seleccionar</button>
-</section>
+        <!--CLASE 07-->
+        <div id="contenedorTarjetas" class="tarjetas-personajes">
+            
         </div>
+
         <button id="boton-personaje">Seleccionar</button>
     </section>
 
@@ -59,6 +56,19 @@
             <button id="boton-barrida" class="btn-ataque">Barrida 👣</button>
         </div>
     </section>
+
+    <section id="ver-mapa">
+    <h1 class="titulo">Recorre el mapa con tu personaje</h1>
+    <canvas id="mapa" width="300" height="600"></canvas>
+    
+    
+    <div>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+    </div>
+</section>
 
     <section id="mensajes">
     </section>

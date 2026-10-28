@@ -141,3 +141,17 @@ button:disabled {
     background-color: #2ed573; /* Verde vida llena */
     transition: width 0.4s ease, background-color 0.4s ease;
 }
+
+
+#ver-mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa {
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.3); /*para darle un fondo semitransparente */
+}
+

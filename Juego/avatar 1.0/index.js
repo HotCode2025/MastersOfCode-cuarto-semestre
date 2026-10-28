@@ -29,15 +29,23 @@ const sectionMensajes = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-enemigo')
 
+const sectionVerMapa = document.getElementById('ver-mapa')
+const mapa = document.getElementById('mapa')
+
 let avatares = []  //creamos el arreglo para los personajes
 
 let ataqueJugador
 let ataqueEnemigo
 let personajeJugadorObjeto 
 let personajeEnemigoObjeto 
+let lienzo = mapa.getContext("2d");
+let intervalo;
+
+let mapaBackground = new Image()
+mapaBackground.src = 'assets/mokemap.png'
 
 class Personaje {
-    constructor(nombre, icono, elemento, color) {
+    constructor(nombre, icono, elemento, color, foto) {
         this.nombre = nombre
         this.icono = icono
         this.elemento = elemento 
@@ -45,15 +53,23 @@ class Personaje {
         this.vidas = 3
         this.vidasMaximas = 3
         this.ataques = []
+        this.x = 20
+        this.y = 30
+        this.ancho = 80
+        this.alto = 80
+        this.mapaFoto = new Image()
+        this.mapaFoto.src = foto
+        this.velocidadX = 0
+        this.velocidadY = 0
     }
 }
 
-let zuko = new Personaje("Zuko", "🔥", "Fuego", "#ff4757")
-let katara = new Personaje("Katara", "🌊", "Agua", "#2e86de")
-let aang = new Personaje("Aang", "🌪️", "Aire", "#f1c40f")
-let toph = new Personaje("Toph", "🪨", "Tierra", "#2ecc71")
-let sokka = new Personaje("Sokka", "🪃", "No maestro", "#34495e")
-let azula = new Personaje("Azula", "⚡", "Fuego", "#8e44ad")
+let zuko = new Personaje("Zuko", "🔥", "Fuego", "#ff4757", "assets/zuko.png")
+let katara = new Personaje("Katara", "💧", "Agua", "#2e86de", "assets/katara.png")
+let aang = new Personaje("Aang", "🌪️", "Aire", "#f1c40f", "assets/aang.png")
+let toph = new Personaje("Toph", "🪨", "Tierra", "#2ecc71", "assets/toph.png")
+let sokka = new Personaje("Sokka", "🪃", "No maestro", "#34495e", "assets/sokka.png")
+let azula = new Personaje("Azula", "⚡", "Fuego", "#8e44ad", "assets/azula.png")
 
 let personajesDisponibles = [zuko, katara, aang, toph, sokka, azula]
 
@@ -129,6 +145,8 @@ function iniciarJuego() {
     document.getElementById('boton-punio').addEventListener('click', () => registrarAtaque('Punio'))
     document.getElementById('boton-patada').addEventListener('click', () => registrarAtaque('Patada'))
     document.getElementById('boton-barrida').addEventListener('click', () => registrarAtaque('Barrida'))
+
+    sectionVerMapa.style.display = 'none';
 }
 
 function mostrarReglas() {
@@ -150,7 +168,6 @@ function seleccionarPersonajeJugador() {
     let spanPersonajeJugador = document.getElementById('personaje-jugador')
     let barraJugador = document.getElementById('barra-vida-jugador')
     barraJugador.style.width = "100%"
-    
     let personajeSeleccionado = document.querySelector('input[name="personaje"]:checked')
 
     if (personajeSeleccionado) {
@@ -169,12 +186,15 @@ function seleccionarPersonajeJugador() {
         return
     }
 
-    document.getElementById('seleccionar-ataque').style.display = 'block'
+    document.getElementById('seleccionar-ataque').style.display = 'none'
     document.getElementById('boton-reglas').style.display = 'none'
     document.getElementById("reglas-del-juego").style.display = "none"
     sectionSeleccionarPersonaje.style.display = 'none' 
    
     seleccionarPersonajeEnemigo()
+
+    sectionVerMapa.style.display = 'flex';
+    intervalo = setInterval(pintarPersonaje, 50);
 }
 
 function seleccionarPersonajeEnemigo() { 
@@ -250,6 +270,54 @@ function reiniciarJuego() {
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function pintarPersonaje() {
+    // 1. Actualizamos la posición del personaje que elegiste
+    personajeJugadorObjeto.x = personajeJugadorObjeto.x + personajeJugadorObjeto.velocidadX;
+    personajeJugadorObjeto.y = personajeJugadorObjeto.y + personajeJugadorObjeto.velocidadY;
+
+    // 2. Limpiamos el canvas para que no queden rastros viejos
+    lienzo.clearRect(0, 0, mapa.width, mapa.height);
+
+    // 3. PRIMERO dibujamos la imagen del mapa de fondo
+    lienzo.drawImage(
+        mapaBackground,
+        0,
+        0,
+        mapa.width,
+        mapa.height
+    );
+
+    // 4. DESPUÉS dibujamos a tu personaje encima del mapa
+    lienzo.drawImage(
+        personajeJugadorObjeto.mapaFoto,
+        personajeJugadorObjeto.x,
+        personajeJugadorObjeto.y,
+        personajeJugadorObjeto.ancho,
+        personajeJugadorObjeto.alto
+    );
+}
+
+function moverDerecha() {
+    personajeJugadorObjeto.velocidadX = 5;
+}
+
+function moverIzquierda() {
+    personajeJugadorObjeto.velocidadX = -5;
+}
+
+function moverAbajo() {
+    personajeJugadorObjeto.velocidadY = 5;
+}
+
+function moverArriba() {
+    personajeJugadorObjeto.velocidadY = -5;
+}
+
+function detenerMovimiento() {
+    personajeJugadorObjeto.velocidadX = 0;
+    personajeJugadorObjeto.velocidadY = 0;
 }
 
 window.addEventListener('load', iniciarJuego)
