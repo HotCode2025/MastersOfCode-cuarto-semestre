@@ -44,7 +44,7 @@ Somos **Masters of Code**, un equipo de estudiantes de la **Tecnicatura en Progr
 
 | Tecnología | Para qué la usamos |
 |---|---|
-| <img src="https://skillicons.dev/icons?i=java" width="28"/> **Java** | Programación orientada a objetos, ejercicios y quizzes |
+| <img src="https://skillicons.dev/icons?i=java" width="28"/> **Java** | Programación orientada a objetos y ejercicios |
 | <img src="https://skillicons.dev/icons?i=js" width="28"/> **JavaScript** | Lógica del lado del cliente y ejercicios de clase |
 | <img src="https://skillicons.dev/icons?i=nodejs" width="28"/> **Node.js** | JavaScript del lado del servidor, módulos y npm |
 | <img src="https://skillicons.dev/icons?i=python" width="28"/> **Python** | Ejercicios y desarrollo de juegos |
