@@ -16,7 +16,7 @@ function adios(nombre, otroCallback) {
     setTimeout(function () {
         console.log('Adios ', nombre);
         otroCallback(); 
-    }, 1000);
+    }, 1500);
 }
 // Funcion recursiva para evitar el callback hell
 function conversacion(nombre, veces, callback) {
@@ -38,6 +38,7 @@ hola('Ariel', function(nombre) {
     });
 });
 
+//callback hell -> bienvenido a la pesadilla de los callbacks
 // hola('Carlos', function(nombre) {
 //    hablar( function() {
 //        hablar(function() {
